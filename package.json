@@ -1,0 +1,28 @@
+{
+  "name": "@vuepress/plugin-jsdelivr-cdn",
+  "version": "0.0.1",
+  "description": "jsdelivr-cdn plugin for vuepress",
+  "keywords": [
+    "documentation",
+    "generator",
+    "vue",
+    "vuepress",
+    "jsdelivr",
+    "cdn"
+  ],
+  "homepage": "https://github.com/vuejs/vuepress/packages/@vuepress/plugin-google-analytics#readme",
+  "bugs": {
+    "url": "https://github.com/vuejs/vuepress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vuepress.git",
+    "directory": "packages/@vuepress/plugin-google-analytics"
+  },
+  "license": "MIT",
+  "author": "ULIVZ <chl814@foxmail.com>",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  }
+}
