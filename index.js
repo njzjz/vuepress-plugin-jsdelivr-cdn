@@ -1,6 +1,12 @@
 module.exports = (options = {}, context) => ({
     extendPageData($page) {
         const cdn = options.cdn
-        $page.size = ($page._content.length / 1024).toFixed(2) + 'kb'
+        var content = $page._content
+        var src = ("src=\"" + cdn)
+        content.replace(
+            "src=\"/",
+            src
+        )
+        $page._content = content
     }
 })
