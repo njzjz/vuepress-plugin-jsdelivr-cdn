@@ -1,5 +1,5 @@
 {
-  "name": "@vuepress/plugin-jsdelivr-cdn",
+  "name": "vuepress-plugin-jsdelivr-cdn",
   "version": "0.0.1",
   "description": "jsdelivr-cdn plugin for vuepress",
   "keywords": [
@@ -10,17 +10,16 @@
     "jsdelivr",
     "cdn"
   ],
-  "homepage": "https://github.com/vuejs/vuepress/packages/@vuepress/plugin-google-analytics#readme",
+  "homepage": "https://github.com/gezihuzi/vuepress-plugin-jsdelivr-cdn#readme",
   "bugs": {
-    "url": "https://github.com/vuejs/vuepress/issues"
+    "url": "https://github.com/gezihuzi/vuepress-plugin-jsdelivr-cdn/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vuepress.git",
-    "directory": "packages/@vuepress/plugin-google-analytics"
+    "url": "git+https://github.com/gezihuzi/vuepress-plugin-jsdelivr-cdn.git",
   },
   "license": "MIT",
-  "author": "ULIVZ <chl814@foxmail.com>",
+  "author": "gezihuzi <a495008890@live.com>",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
