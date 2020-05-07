@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gezihuzi/vuepress-plugin-jsdelivr-cdn.git",
+    "url": "git+https://github.com/gezihuzi/vuepress-plugin-jsdelivr-cdn.git"
   },
   "license": "MIT",
   "author": "gezihuzi <a495008890@live.com>",
