@@ -6,7 +6,6 @@ module.exports = (options, context) => ({
         const base = context.base || '/'
         const cdn = options.cdn || base
         console.log(options, context)
-        console.log(cdn)
         pagePaths.forEach(pagePath => {
             console.log('start parse: ' + pagePath)
             fs.readFile(pagePath, 'utf8', function (err, data) {
@@ -30,7 +29,7 @@ function replace(root, selector, key, base, cdn) {
     const nodes = root.querySelectorAll(selector)
     nodes.forEach(node => {
         const value = node.getAttribute(key)
-        if (value && (value.charAt(0) === base || value.charAt(0) === '/')) {
+        if (value && (value.charAt(0) === base || value.charAt(0) === '/') && !value.includes('manifest.json')) {
             const newValue = cdn + value.slice(1)
             node.setAttribute(key, newValue)
         }
