@@ -23,5 +23,8 @@
   "main": "index.js",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "node-html-parser": "1.2.16"
   }
 }
