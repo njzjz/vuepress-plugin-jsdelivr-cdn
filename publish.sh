@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 git config --global user.name "travis"
-git config --global user.name "travis@miantiao.me"
+git config --global user.email "travis@miantiao.me"
 
 # setup repo
 rm -rf $REPO_NAME
