@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-jsdelivr-cdn",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "jsdelivr-cdn plugin for vuepress",
   "keywords": [
     "documentation",
@@ -21,6 +21,9 @@
   "license": "MIT",
   "author": "gezihuzi <a495008890@live.com>",
   "main": "index.js",
+  "scripts": {
+    "docs:publish": "./publish.sh"
+  },
   "publishConfig": {
     "access": "public"
   },
