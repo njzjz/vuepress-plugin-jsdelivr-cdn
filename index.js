@@ -1,13 +1,17 @@
 const parser = require('node-html-parser')
 const fs = require('fs')
+const path = require('path')
 
 module.exports = (options, context) => ({
     async generated(pagePaths) {
         const base = context.base || '/'
         const cdn = options.cdn || base
-        console.log(options, context)
+
+        console.log('start replacing cdn ' + cdn)
+
+        console.log('replace *.html tags')
+        // replace *.html tags
         pagePaths.forEach(pagePath => {
-            console.log('start parse: ' + pagePath)
             fs.readFile(pagePath, 'utf8', function (err, data) {
                 if (err) throw err
                 const root = parser.parse(data)
@@ -19,9 +23,29 @@ module.exports = (options, context) => ({
                 fs.writeFile(pagePath, newContent, 'utf8', function (err) {
                     if (err) throw err
                 })
-                console.log('end parse: ' + pagePath)
             })
         })
+
+        console.log('replace service-worker.js tags')
+        // replace service-worker.js tags
+        const serviceWorkerBase = ''
+        const serviceWorkerCdn = options.cdn || serviceWorkerBase
+        const tags = ["assets/css/", "assets/img/", "assets/js/", "images/icons/"]
+        const outDir = context.outDir || ''
+        const serviceWorkerPath = path.resolve(outDir, 'service-worker.js')
+        fs.readFile(serviceWorkerPath, 'utf8', function (err, data) {
+            if (err) throw err
+            var content = data
+            tags.forEach(tag => {
+                const regex = RegExp(tag, "g")
+                content = content.replace(regex, serviceWorkerCdn + tag)
+            })
+            fs.writeFile(serviceWorkerPath, content, 'utf8', function (err) {
+                if (err) throw err
+            })
+        })
+
+        console.log('replace cdn successfully')
     },
 })
 
