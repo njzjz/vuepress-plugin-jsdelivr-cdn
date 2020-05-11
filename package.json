@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-jsdelivr-cdn",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "jsdelivr-cdn plugin for vuepress",
   "keywords": [
     "documentation",
