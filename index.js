@@ -35,8 +35,9 @@ module.exports = (options, context) => ({
         const serviceWorkerCdn = options.cdn || serviceWorkerBase
         const tags = ["assets/css/", "assets/img/", "assets/js/", "images/icons/", "./workbox"]
         const outDir = app.options.dest || ''
-        const serviceWorkerPath = path.resolve(outDir, 'service-worker.js')
-        fs.readFile(serviceWorkerPath, 'utf8', function (err, data) {
+		const workboxPath = await globby([path.resolve(app.dir.dest(), 'workbox-*.js'), path.resolve(app.dir.dest(), 'service-worker.js')])
+		workboxPath.forEach(serviceWorkerPath => {
+          fs.readFile(serviceWorkerPath, 'utf8', function (err, data) {
             if (err) throw err
             var content = data
             tags.forEach(tag => {
@@ -46,8 +47,8 @@ module.exports = (options, context) => ({
             fs.writeFile(serviceWorkerPath, content, 'utf8', function (err) {
                 if (err) throw err
             })
-        })
-
+          })
+		}
         console.log('replace cdn successfully')
     },
 })
