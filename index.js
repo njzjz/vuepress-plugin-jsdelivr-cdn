@@ -33,7 +33,7 @@ module.exports = (options, context) => ({
         // replace service-worker.js tags
         const serviceWorkerBase = ''
         const serviceWorkerCdn = options.cdn || serviceWorkerBase
-        const tags = ["assets/css/", "assets/img/", "assets/js/", "images/icons/"]
+        const tags = ["assets/css/", "assets/img/", "assets/js/", "images/icons/", "./workbox"]
         const outDir = app.options.dest || ''
         const serviceWorkerPath = path.resolve(outDir, 'service-worker.js')
         fs.readFile(serviceWorkerPath, 'utf8', function (err, data) {
