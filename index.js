@@ -6,9 +6,7 @@ const globby = require('@vuepress/utils').globby
 module.exports = (options, context) => ({
     async onGenerated(app) {
 		// https://github.com/vuepress/vuepress-next/blob/ac73433bdb788ff6f9c82eb09f14c1cccf304995/packages/%40vuepress/core/src/app/createAppPages.ts#L9-L11
-		const pagePaths = await globby(app.options.pagePatterns, {
-		    cwd: app.dir.dest(),
-		})
+		const pagePaths = await globby([path.resolve(app.dir.dest(), '**/*.html')])
         const base = app.options.base || '/'
         const cdn = options.cdn || base
 
