@@ -9,7 +9,7 @@ module.exports = (options, context) => ({
 		const pagePaths = await globby(app.options.pagePatterns, {
 		    cwd: app.dir.dest(),
 		})
-        const base = context.base || '/'
+        const base = app.options.base || '/'
         const cdn = options.cdn || base
 
         console.log('start replacing cdn ' + cdn)
@@ -36,7 +36,7 @@ module.exports = (options, context) => ({
         const serviceWorkerBase = ''
         const serviceWorkerCdn = options.cdn || serviceWorkerBase
         const tags = ["assets/css/", "assets/img/", "assets/js/", "images/icons/"]
-        const outDir = context.dest || ''
+        const outDir = app.options.dest || ''
         const serviceWorkerPath = path.resolve(outDir, 'service-worker.js')
         fs.readFile(serviceWorkerPath, 'utf8', function (err, data) {
             if (err) throw err
