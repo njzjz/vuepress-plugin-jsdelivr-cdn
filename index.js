@@ -1,7 +1,7 @@
 const parser = require('node-html-parser')
 const fs = require('fs')
 const path = require('path')
-import { globby } from '@vuepress/utils'
+const globby = require('@vuepress/utils').globby
 
 module.exports = (options, context) => ({
     async onGenerated(app) {
