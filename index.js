@@ -48,7 +48,7 @@ module.exports = (options, context) => ({
                 if (err) throw err
             })
           })
-		}
+		})
         console.log('replace cdn successfully')
     },
 })
