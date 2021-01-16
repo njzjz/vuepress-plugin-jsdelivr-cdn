@@ -7,7 +7,7 @@ module.exports = (options, context) => ({
     async onGenerated(app) {
 		// https://github.com/vuepress/vuepress-next/blob/ac73433bdb788ff6f9c82eb09f14c1cccf304995/packages/%40vuepress/core/src/app/createAppPages.ts#L9-L11
 		const pagePaths = await globby(app.options.pagePatterns, {
-		    cwd: app.dir.temp(),
+		    cwd: app.dir.dest(),
 		})
         const base = context.base || '/'
         const cdn = options.cdn || base
@@ -36,7 +36,7 @@ module.exports = (options, context) => ({
         const serviceWorkerBase = ''
         const serviceWorkerCdn = options.cdn || serviceWorkerBase
         const tags = ["assets/css/", "assets/img/", "assets/js/", "images/icons/"]
-        const outDir = context.outDir || ''
+        const outDir = context.dest || ''
         const serviceWorkerPath = path.resolve(outDir, 'service-worker.js')
         fs.readFile(serviceWorkerPath, 'utf8', function (err, data) {
             if (err) throw err
