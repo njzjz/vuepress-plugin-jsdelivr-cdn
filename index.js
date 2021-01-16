@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = (options, context) => ({
-    async generated(pagePaths) {
+    async onGenerated(pagePaths) {
         const base = context.base || '/'
         const cdn = options.cdn || base
 
