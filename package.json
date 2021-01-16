@@ -28,6 +28,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@vuepress/utils": "^2.0.0-alpha.15",
     "node-html-parser": "1.2.16"
   }
 }
